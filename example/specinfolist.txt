@@ -1,0 +1,60 @@
+! chemSymb    siteType    fixCover    iniCover
+H               2           0          0.00
+O               2           0          0.00
+C               3           0          0.00
+H2              0           0          0.00
+OH              2           0          0.00
+CO              2           0          0.00
+CH              3           0          0.00
+CO2             1           0          0.00
+CH2             1           0          0.00
+CH3             0           0          0.00
+CH4             2           0          0.00
+H2O             0           0          0.00
+CHO             2           0          0.00
+COH             2           0          0.00
+COOH            1           0          0.00
+HCOO            1           0          0.00
+HCOOH           0           0          0.00
+H2COO           3           0          0.00
+H2COOH          2           0          0.00
+CHOH            1           0          0.00
+CH2O            2           0          0.00
+CH2OH           1           0          0.00
+CH3O            2           0          0.00
+CH3OH           0           0          0.00
+CH3CH2OH        0           0          0.00
+
+! CC              3           0          0.00
+! CCH             3           0          0.00
+! CCH2            2           0          0.00
+! CCH3            2           0          0.00
+! CCO             3           0          0.00
+! CCHO            3           0          0.00
+! CCOH            3           0          0.00
+! CCHOH           2           0          0.00
+! CCH2O           2           0          0.00
+! CCH2OH          2           0          0.00
+! CHCH            3           0          0.00
+! CHCH2           2           0          0.00
+! CHCH3           1           0          0.00
+! CHCO            3           0          0.00
+! CHCHO           2           0          0.00
+! CHCOH           3           0          0.00
+! CHCHOH          2           0          0.00
+! CHCH2O          3           0          0.00
+! CHCH2OH         2           0          0.00
+! CH2CH2          1           0          0.00
+! CH2CH3          0           0          0.00
+! CH2CO           1           0          0.00
+! CH2CHO          1           0          0.00
+! CH2COH          2           0          0.00
+! CH2CH2O         3           0          0.00
+! CH2CHOH         1           0          0.00
+! CH2CH2OH        2           0          0.00
+! CH3CH3          3           0          0.00
+! CH3CO           1           0          0.00
+! CH3CHO          1           0          0.00
+! CH3COH          1           0          0.00
+! CH3CH2O         1           0          0.00
+! CH3CHOH         0           0          0.00

@@ -1,0 +1,123 @@
+!                      area(m^2)   mass(aum)   theta(K)    sigma   stick   Eads(eV)    press(pa)
+HK;  H2       ;        1.15e-26     2          88.0        2       1       0.53        2.4e6    ! 0.43
+HK;  CO2      ;        1.15e-26    44          0.56        2       1       0.25        0.8e6
+HK;  H2O      ;        1.15e-18    18          22.0        2       1       0.49        0.0e0
+HK;  CO       ;        1.15e-18    28          2.80        1       1       2.32        0.0e0
+HK;  CH4      ;        1.15e-18    16          7.56        1       1       0.28        0.0e0
+HK;  CH3OH    ;        1.15e-18    32          6.10        1       1       0.70        0.0e0
+HK;  CH3CH2OH ;        1.15e-18    46          1.68        1       1       0.86        0.0e0
+
+!                                             vf      vb      Eaf     Eab     rf      rb  
+AR; H2                 => H         + H  ;    1e5     1e5     0.05    0.87    0.00    0.00
+AR; O        + H       => OH             ;    1e13    1e13    0.72    0.93    0.00    0.00
+AR; OH       + H       => H2O            ;    1e13    1e13    0.68    1.12    0.00    0.00
+AR; CO2      + H       => COOH           ;    1e13    1e13    0.64    0.71    0.00    0.00
+AR; CO2      + H       => HCOO           ;    1e13    1e13    1.16    0.97    0.00    0.00
+AR; CO2                => CO        + O  ;    1e13    1e13    1.19    1.07    0.00    0.00
+AR; COOH     + H       => HCOOH          ;    1e13    1e13    0.72    0.69    0.00    0.00
+AR; COOH     + H       => CO        + H2O;    1e13    1e13    1.11    0.91    0.00    0.00
+AR; COOH               => CO        + OH ;    1e13    1e13    0.61    1.00    0.00    0.00
+AR; HCOO     + H       => H2COO          ;    1e13    1e13    1.35    0.21    0.00    0.00
+AR; HCOO     + H       => HCOOH          ;    1e13    1e13    0.70    0.58    0.00    0.00
+AR; HCOO               => CHO       + O  ;    1e13    1e13    2.19    1.12    0.00    0.00
+AR; HCOOH    + H       => H2COOH         ;    1e13    1e13    0.97    0.31    0.00    0.00
+AR; HCOOH    + H       => CHO       + H2O;    1e13    1e13    0.98    0.70    0.00    0.00
+AR; HCOOH              => CHO       + OH ;    1e13    1e13    1.38    1.04    0.00    0.00
+AR; HCOOH              => CHOH      + O  ;    1e13    1e13    1.22    2.30    0.00    0.00
+AR; H2COO    + H       => H2COOH         ;    1e13    1e13    0.65    0.87    0.00    0.00
+AR; H2COO              => CH2O      + O  ;    1e13    1e13    1.36    1.04    0.00    0.00
+AR; H2COOH   + H       => CH2O      + H2O;    1e13    1e13    0.70    0.83    0.00    0.00
+AR; H2COOH             => CH2O      + OH ;    1e13    1e13    1.23    0.95    0.00    0.00
+AR; H2COOH             => CH2OH     + O  ;    1e13    1e13    1.82    1.10    0.00    0.00
+AR; C        + H       => CH             ;    1e13    1e13    0.87    0.71    0.00    0.00
+AR; CH       + H       => CH2            ;    1e13    1e13    0.55    0.10    0.00    0.00
+AR; CH2      + H       => CH3            ;    1e13    1e13    0.70    0.81    0.00    0.00
+AR; CH3      + H       => CH4            ;    1e13    1e13    1.45    1.53    0.00    0.00
+AR; CH       + O       => CHO            ;    1e13    1e13    1.00    1.94    0.00    0.00
+AR; CH2      + O       => CH2O           ;    1e13    1e13    1.19    2.08    0.00    0.00
+AR; CH3      + O       => CH3O           ;    1e13    1e13    1.17    1.55    0.00    0.00
+AR; CHOH               => CH        + OH ;    1e13    1e13    1.37    1.24    0.00    0.00
+AR; CH2OH              => CH2       + OH ;    1e13    1e13    1.30    0.81    0.00    0.00
+AR; CH3OH              => CH3       + OH ;    1e13    1e13    1.26    0.99    0.00    0.00
+AR; CHOH     + H       => CH        + H2O;    1e13    1e13    1.09    1.25    0.00    0.00
+AR; CH2OH    + H       => CH2       + H2O;    1e13    1e13    1.25    0.81    0.00    0.00
+AR; CH3OH    + H       => CH3       + H2O;    1e13    1e13    0.60    0.72    0.00    0.00
+AR; CO       + H       => CHO            ;    1e13    1e13    1.48    0.37    0.00    0.00
+AR; CHO      + H       => CH2O           ;    1e13    1e13    0.99    0.31    0.00    0.00
+AR; CHO      + H       => CHOH           ;    1e13    1e13    0.79    0.49    0.00    0.00
+AR; COH      + H       => CHOH           ;    1e13    1e13    1.09    0.58    0.00    0.00
+AR; COH      + H       => C         + H2O;    1e13    1e13    1.15    1.00    0.00    0.00
+AR; CH2O     + H       => CH3O           ;    1e13    1e13    1.11    0.78    0.00    0.00
+AR; CH2O     + H       => CH2OH          ;    1e13    1e13    0.62    0.68    0.00    0.00
+AR; CHOH     + H       => CH2OH          ;    1e13    1e13    0.88    0.55    0.00    0.00
+AR; CH3O     + H       => CH3OH          ;    1e13    1e13    0.54    0.80    0.00    0.00
+AR; CH2OH    + H       => CH3OH          ;    1e13    1e13    1.27    1.16    0.00    0.00
+AR; CH3      + CH2OH   => CH3CH2OH       ;    1e13    1e13    0.69    1.22    0.00    0.00
+
+
+! HK;  CH3CH3   ;        1.15e-18    30          3.88        1       1       0.61        0.0e0
+! AR; CH       + CH2     => CHCH2          ;    1e13    1e13    1.32    1.60    0.00    0.00
+! AR; CH       + CH3     => CHCH3          ;    1e13    1e13    0.78    1.16    0.00    0.00
+! AR; CH       + CHO     => CHCHO          ;    1e13    1e13    1.03    1.16    0.00    0.00
+! AR; CH       + CH2O    => CHCH2O         ;    1e13    1e13    1.26    1.04    0.00    0.00
+! AR; CH       + CH2OH   => CHCH2OH        ;    1e13    1e13    1.38    1.37    0.00    0.00
+! AR; CH2      + CH2     => CH2CH2         ;    1e13    1e13    1.31    2.47    0.00    0.00
+! AR; CH2      + CH3     => CH2CH3         ;    1e13    1e13    1.20    1.80    0.00    0.00
+! AR; CH2      + CO      => CH2CO          ;    1e13    1e13    1.09    0.73    0.00    0.00
+! AR; CH2      + CHO     => CH2CHO         ;    1e13    1e13    1.17    1.36    0.00    0.00
+! AR; CH2      + COH     => CH2COH         ;    1e13    1e13    1.27    1.26    0.00    0.00
+! AR; CH2      + CH2O    => CH2CH2O        ;    1e13    1e13    1.00    1.24    0.00    0.00
+! AR; CH2      + CHOH    => CH2CHOH        ;    1e13    1e13    1.34    2.09    0.00    0.00
+! AR; CH2      + CH2OH   => CH2CH2OH       ;    1e13    1e13    1.12    1.63    0.00    0.00
+! AR; CH3      + CHO     => CH3CHO         ;    1e13    1e13    0.95    0.90    0.00    0.00
+! AR; CH3      + COH     => CH3COH         ;    1e13    1e13    1.24    1.55    0.00    0.00
+! AR; CH3      + CH2O    => CH3CH2O        ;    1e13    1e13    0.78    1.11    0.00    0.00
+! AR; CH3      + CHOH    => CH3CHOH        ;    1e13    1e13    1.15    1.37    0.00    0.00
+! AR; CHCH2    + H       => CH2CH2         ;    1e13    1e13    0.84    1.05    0.00    0.00
+! AR; CHCH2    + H       => CHCH3          ;    1e13    1e13    0.60    0.57    0.00    0.00
+! AR; CHCH2    + O       => CH2CHO         ;    1e13    1e13    1.14    1.93    0.00    0.00
+! AR; CHCH2    + O       => CHCH2O         ;    1e13    1e13    1.14    1.32    0.00    0.00
+! AR; CHCH2    + OH      => CH2CHOH        ;    1e13    1e13    1.03    1.55    0.00    0.00
+! AR; CHCH2    + OH      => CHCH2OH        ;    1e13    1e13    1.03    1.06    0.00    0.00
+! AR; CHCH2    + H2O     => CH2CHOH   + H  ;    1e13    1e13    0.77    1.09    0.00    0.00
+! AR; CHCH3    + H       => CH2CH3         ;    1e13    1e13    1.21    0.85    0.00    0.00
+! AR; CHCH3    + O       => CH3CHO         ;    1e13    1e13    1.20    1.92    0.00    0.00
+! AR; CHCH3    + OH      => CH3CHOH        ;    1e13    1e13    1.09    1.65    0.00    0.00
+! AR; CHCH3    + H2O     => CH3CHOH   + H  ;    1e13    1e13    0.82    0.99    0.00    0.00
+! AR; CHCHO    + H       => CH2CHO         ;    1e13    1e13    0.87    1.04    0.00    0.00
+! AR; CHCHO    + H       => CHCH2O         ;    1e13    1e13    0.86    0.19    0.00    0.00
+! AR; CHCHO    + H       => CHCHOH         ;    1e13    1e13    1.00    0.88    0.00    0.00
+! AR; CHCH2O   + H       => CH2CH2O        ;    1e13    1e13    0.82    0.82    0.00    0.00
+! AR; CHCH2O   + H       => CHCH2OH        ;    1e13    1e13    0.47    0.92    0.00    0.00
+! AR; CHCHOH   + H       => CH2CHOH        ;    1e13    1e13    0.93    1.16    0.00    0.00
+! AR; CHCHOH   + H       => CHCH2OH        ;    1e13    1e13    0.93    0.67    0.00    0.00
+! AR; CHCH2OH  + H       => CH2CH2OH       ;    1e13    1e13    0.87    0.85    0.00    0.00
+! AR; CHCH2OH  + H       => CHCH2     + H2O;    1e13    1e13    0.52    0.78    0.00    0.00
+! AR; CH2CH2   + H       => CH2CH3         ;    1e13    1e13    0.79    0.49    0.00    0.00
+! AR; CH2CH2   + O       => CH2CH2O        ;    1e13    1e13    1.04    0.83    0.00    0.00
+! AR; CH2CH2   + OH      => CH2CH2OH       ;    1e13    1e13    0.97    0.79    0.00    0.00
+! AR; CH2CH2   + H2O     => CH2CH2OH  + H  ;    1e13    1e13    0.87    0.36    0.00    0.00
+! AR; CH2CH3   + H       => CH3CH3         ;    1e13    1e13    1.13    1.16    0.00    0.00
+! AR; CH2CH3   + O       => CH3CH2O        ;    1e13    1e13    1.10    1.43    0.00    0.00
+! AR; CH2CH3   + OH      => CH3CH2OH       ;    1e13    1e13    0.90    1.24    0.00    0.00
+! AR; CH2CH3   + H2O     => CH3CH2OH  + H  ;    1e13    1e13    0.71    0.89    0.00    0.00
+! AR; CH2CO    + H       => CH3CO          ;    1e13    1e13    1.03    1.22    0.00    0.00
+! AR; CH2CO    + H       => CH2CHO         ;    1e13    1e13    1.03    0.75    0.00    0.00
+! AR; CH2CO    + H       => CH2COH         ;    1e13    1e13    1.14    0.71    0.00    0.00
+! AR; CH2CHO   + H       => CH3CHO         ;    1e13    1e13    0.99    0.95    0.00    0.00
+! AR; CH2CHO   + H       => CH2CH2O        ;    1e13    1e13    0.99    0.40    0.00    0.00
+! AR; CH2CHO   + H       => CH2CHOH        ;    1e13    1e13    0.75    0.77    0.00    0.00
+! AR; CH2COH   + H       => CH3COH         ;    1e13    1e13    0.94    1.36    0.00    0.00
+! AR; CH2COH   + H       => CH2CHOH        ;    1e13    1e13    0.94    1.08    0.00    0.00
+! AR; CH2CH2O  + H       => CH3CH2O        ;    1e13    1e13    0.91    1.12    0.00    0.00
+! AR; CH2CH2O  + H       => CH2CH2OH       ;    1e13    1e13    0.70    0.95    0.00    0.00
+! AR; CH2CHOH  + H       => CH3CHOH        ;    1e13    1e13    1.07    0.85    0.00    0.00
+! AR; CH2CHOH  + H       => CH2CH2OH       ;    1e13    1e13    1.08    0.64    0.00    0.00
+! AR; CH2CH2OH + H       => CH3CH2OH       ;    1e13    1e13    1.02    1.32    0.00    0.00
+! AR; CH3CO    + H       => CH3CHO         ;    1e13    1e13    0.98    0.46    0.00    0.00
+! AR; CH3CO    + H       => CH3COH         ;    1e13    1e13    0.91    0.77    0.00    0.00
+! AR; CH3CHO   + H       => CH3CH2O        ;    1e13    1e13    1.07    0.71    0.00    0.00
+! AR; CH3CHO   + H       => CH3CHOH        ;    1e13    1e13    0.74    0.69    0.00    0.00
+! AR; CH3COH   + H       => CH3CHOH        ;    1e13    1e13    0.92    0.48    0.00    0.00
+! AR; CH3CH2O  + H       => CH3CH2OH       ;    1e13    1e13    0.37    0.79    0.00    0.00
+! AR; CH3CHOH  + H       => CH3CH2OH       ;    1e13    1e13    1.02    0.91    0.00    0.00
