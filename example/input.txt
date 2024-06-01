@@ -1,4 +1,4 @@
-400.0       ! temperature (K)
+480.0       ! temperature (K)
 100 100     ! lattice size
 
 10000000000 ! max kmc step 1e10
@@ -9,6 +9,6 @@
 
 1           ! type of diffusion
 1           ! steps diffusion happened
-5           ! diffusion percentage (%)
+300         ! diffusion percentage (%%%)
 
-100000      ! step_to_print
+1000000     ! step_to_print

@@ -48,8 +48,15 @@ KmcSys::KmcSys():
 
     rCntList = SizeVec(nReac, 0);
 
+    SizeType EventMax = 5000;
     eventList = EventMat(nReac);
-    rItemList = RealVec(nReac);
+    rItemList = SizeVec(nReac);
+
+    for (SizeType i = 0; i < nReac; ++i) {
+        rItemList[i] = 0;
+        eventList[i] = EventVec(EventMax);
+    }
+
     constList = RealVec(nReac);
     rRateList = RealVec(nReac);
 
@@ -73,6 +80,9 @@ KmcSys::~KmcSys() {
 }
 
 void KmcSys::kmc_run() {
+
+    auto start = std::chrono::high_resolution_clock::now();
+
     while (true) {
 
         if (kmcStep > input.maxStep) {
@@ -85,7 +95,7 @@ void KmcSys::kmc_run() {
 
         const RealVec &v = rRateList;
         double rateSum = std::accumulate(v.begin(), v.end(), double(0));
-        if (rateSum < 1.0e-20) {
+        if (rateSum < 1.0e-50) {
             std::printf("KmcSys: no reaction can happen anymore ...\n");
             break;
         }
@@ -111,7 +121,14 @@ void KmcSys::kmc_run() {
 
         // print on screen
         if (kmcStep % input.printStep == 0) {
-            std::printf("step = %zu / %zu\n", kmcStep, input.maxStep);
+            auto end = std::chrono::high_resolution_clock::now();
+            std::chrono::duration<double> diff = end - start;
+            double time_min = diff.count() / 60.0;
+
+            SizeType step_M = kmcStep / 1000000;
+            SizeType maxS_M = input.maxStep / 1000000;
+            std::printf("step = %zu M / %zu M    (%.2lf%%)    %.2lf min\n", 
+                        step_M, maxS_M, double(step_M * 100) / maxS_M, time_min);
         }
 
         // print to file
@@ -124,8 +141,9 @@ void KmcSys::kmc_run() {
 void KmcSys::update_eventList_reactItem() {
     for (SizeType i = 0; i < reactionList.size(); ++i) {
         const Reaction &reaction = reactionList[i];
-        eventList[i].clear();
-        rItemList[i] = scan_eventList_reactItem(eventList[i], lattice, reaction, specinfoList);
+        rItemList[i] = 0;
+        scan_eventList_reactItem(eventList[i], rItemList[i], 
+                                    lattice, reaction, specinfoList);
     }
 }
 
@@ -152,22 +170,34 @@ void KmcSys::take_reaction(SizeType iReact) {
 
     const Reaction &reaction = reactionList[iReact];
 
-    // about "H + H -> H2"
+    
     if (reaction.reac_num() == 2) {
         SizeType rType0 = reaction.reacTypes[0];
         SizeType rType1 = reaction.reacTypes[1];
         SizeType pType0 = reaction.prodTypes[0];
 
+        // about "H + H -> H2"
         if (rType0 == rType1 && specinfoList[rType0].chemSymb == "H") {
             lattice.random_remove_item(rType0); // remove H
             lattice.random_remove_item(rType0); // remove H
             lattice.random_insert_item(pType0); // add H2
             return;
         }
+
+        // about "CO + H -> CHO"
+        if (specinfoList[rType0].chemSymb == "CO" && specinfoList[rType1].chemSymb == "H") {
+            lattice.random_remove_item(rType0); // remove CO
+            lattice.random_remove_item(rType1); // remove H
+            lattice.random_insert_item(pType0); // add CHO
+            return;
+        }
+
     }
 
+
+
     SizeType rnd = uniform_random_sizet();
-    SizeType rev = rnd % eventList[iReact].size();
+    SizeType rev = rnd % rItemList[iReact];
     const Event &e = eventList[iReact][rev];
 
     assert(e.num_remove == reaction.reac_num());
@@ -210,7 +240,7 @@ void KmcSys::take_reaction(SizeType iReact) {
 
 // move to random position
 void KmcSys::take_diffusion_type_1() {
-    double movePercent = input.diffPerc / 10000.0;
+    double movePercent = input.diffPerc / 1000000.0;
     for (SizeType specType = 0; specType < specinfoList.size(); ++specType) {
         SizeType numItem = lattice.adsorItem[specType].size();
         SizeType numMove = numItem * movePercent;

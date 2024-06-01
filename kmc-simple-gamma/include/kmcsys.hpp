@@ -38,7 +38,7 @@ public:
 
     // kmc core utility
     EventMat    eventList;
-    RealVec     rItemList;  // num of reactants
+    SizeVec     rItemList;  // num of reactants
     RealVec     constList;  // reaction rate constant
     RealVec     rRateList;  // reactionRateList
 
